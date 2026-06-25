@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>marathon-form</title>
+    <style>
+        label {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: mediumvioletred; background-color: black;">Merathon Registration</h1>
+    <br>
+    <form action="marathon.com">
+        <div>
+            <label for="first">Enter your first name</label>
+            <input type="text" name="name" id="first" required>
+            <label for="last">Enter last name</label>
+            <input type="text" name="name" id="last" required>
+        </div>
+        <br>
+        <br>
+        <b>select the race you want to participate:</b>
+        <p>
+            <label for="fullr">fullrace 5k</label>
+            <input type="radio" id="fullr" name="race type" value="fullr">
+            <br>
+            <label for="halfm">Half Marathon</label>
+            <input type="radio" id="halfm" name="race type" value="halfm">
+            <br>
+            <label for="fullm">Full Marathon</label>
+            <input type="radio" name="race type" id="fullm" value="fullm">
+        </p>
+        <p>
+            <label for="email"> Enter your email</label>
+            <input type="email" id="email" placeholder="enter email" name="email" required>
+            <br>
+            <label for="password">Enter password</label>
+            <input type="password" name="password" id="password" required>
+        </p>
+        <p>
+            <label for="age">Selct age group</label>
+            <select name="age group" id="age" required>
+                <option value="">--choose one of these--</option>
+                <option value="child">5-10</option>
+                <option value="young">11-20</option>
+                <option value="adult">21-40</option>
+                <option value="old">41-60</option>
+            </select>
+        </p>
+        <button>register </button>
+    </form>
+</body>
+
+</html>

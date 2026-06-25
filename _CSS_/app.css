@@ -1,0 +1,38 @@
+h1{
+    color: rgb(11, 11, 206);
+    text-align: center;
+    width: 100%;
+    font-weight: 100;
+         text-decoration: orange wavy underline;
+         letter-spacing: 10px;
+         font-size: 80px;
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+p{
+    line-height: 2;
+    
+}
+.noty{
+    color: blueviolet;
+    background-color: green;
+}
+h3+p{
+    background-color: yellow;
+}
+p:nth-of-type(2n){
+    background-color: greenyellow;
+}
+h2::first-letter{
+    color: olive;
+    background-color: black;
+    font-size: 50px;
+ }
+ p::first-line{
+    color: purple;
+ }
+ *::selection{
+    background-color: maroon;
+ }
