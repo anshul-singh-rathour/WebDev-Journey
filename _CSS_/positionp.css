@@ -1,0 +1,42 @@
+div{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-color: grey;
+    border: 10px solid black;
+    margin: 10px;
+}
+#middle{
+    background-color: green;
+}
+#static #middle{
+    position: static;
+}
+#relative #middle{
+    position: relative;
+    top: 100px;
+    left: 100px;
+     right: 100px; 
+     bottom: 100px;  
+} 
+section{
+    position: relative;
+}
+#absolute #middle{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+#fixed #middle{
+    position: fixed;
+    top: 100px;
+    left: 100px;
+}
+#sticky{
+    height: 1000px;
+}
+
+#sticky #middle{
+    position: sticky;
+    top: 20px;
+}
