@@ -1,3 +1,6 @@
+html{
+    font-size: 40px;
+}
 label{
     color: orangered;
 }
@@ -31,4 +34,30 @@ input[type="checkbox"]:checked +label{
     box-shadow: 0 0 0 3px magenta;
         color: rgb(32, 166, 203);
     
+}
+form{
+    font-size: 30%;
+    background-color: beige;
+}
+button{
+        border-radius: 3em;
+}
+ul{
+    font-size: 3rem;
+}
+html{
+    background-color: rgba(67, 133, 64, 0.4);
+}
+#alphs{
+    color: black;
+    height: 400px;
+    width: 50OX;
+    background-color: rgb(13, 51, 11, 0.1);
+}
+#opacity{
+    color: black;
+    height: 400px;
+    width: 50OX;
+    background-color: blueviolet;
+    opacity: 0.3;
 }
