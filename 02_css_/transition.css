@@ -1,0 +1,60 @@
+.circle {
+    height: 300px;
+    width: 300px;
+    background-color: rgb(179, 27, 179);
+    transition: background-color 3s, border-radius 1s;
+}
+
+.circle:hover {
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+section div {
+    height: 100px;
+    width: 100px;
+    background-color:turquoise;
+    margin: 20px 0;
+    transition: margin-left ease-in-out 3s;
+}
+
+section:hover div {
+    margin-left: 500px;
+}
+
+
+h1{
+background-color: #2a9d8f;
+border: 5px solid #264653;
+color: #eae2b7;
+padding: 0.7em;
+width: 300px;
+font-size: 1.8em;
+text-align:center;
+margin: 20px auto; 
+font-weight:lighter ;
+}
+h1:nth-of-type(2n) {
+background-color:#e9c46a;
+}
+h1:nth-of-type(3n) {
+background-color:#f4a261;
+}
+h1:nth-of-type(4n) {
+background-color: #e76f51;
+}
+section:nth-of-type(2) h1:nth-of-type(1){
+    transform:rotate(90deg);
+}
+section:nth-of-type(2) h1:nth-of-type(2){
+    transform: scaleX(2);
+}
+section:nth-of-type(2) h1:nth-of-type(3){
+    transform:translate(100px,200px);
+}
+section:nth-of-type(2) h1:nth-of-type(4){
+    transform:skew(20deg,50deg);
+}
+section:nth-of-type(3){
+    transform:rotate(90deg) scale(2,1) translateX(0px);
+}

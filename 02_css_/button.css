@@ -1,0 +1,35 @@
+body{
+font-family: 'Roboto', sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background-color: black;
+}
+button{
+    background-color: black;
+    color: orange;
+    border: 3px solid orange;
+    padding: 1em 2em;
+    font-size: 2em;
+     transition: all 0.25s;
+    
+}
+button:hover{
+    color: wheat;
+    border-color: yellow;
+    box-shadow: 0em 0.5em 0.5em -0.4em yellowgreen;
+     transform: translateY(-0.25em);
+     cursor: pointer;
+}
+div{
+font-family: 'Roboto', sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+  width: 1600px;
+  height: 1600px;
+background: center/cover url("https://i.pinimg.com/1200x/f4/9c/62/f49c62cceec557e8393eaaa94969f51c.jpg") no-repeat;
+
+
+}
