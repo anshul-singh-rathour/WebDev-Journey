@@ -97,5 +97,103 @@
 
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// pig game
+// // pig game
+
+
+// // seclecting elements 
+// let player0el=document.querySelector(".player--0");
+// let player1el=document.querySelector(".player--1");
+// let score0el=document.getElementById("score--0");
+// let score1el=document.getElementById("score--1");
+// let diceImage=document.querySelector(".dice");
+// let rollButton = document.querySelector(".btn--roll");
+// let newButton = document.querySelector(".btn--new");
+// let holdButton = document.querySelector(".btn--hold");
+// let current0el=document.getElementById("current--0");
+// let current1el=document.getElementById("current--1");
+// let Scores,currentScore,activePlayer;
+
+
+// // set conditions
+// const set=function(){    
+//     // set UI
+//     score0el.textContent = 0;
+//     score1el.textContent = 0;
+//     current0el.textContent = 0;
+//     current1el.textContent = 0;
+
+//     // set scores
+//     Scores = [0,0];
+//     currentScore = 0;
+//     activePlayer = 0;
+    
+
+//     // set player classes
+//     player0el.classList.remove("player--winner");
+//     player1el.classList.remove("player--winner");
+//     player1el.classList.remove("player--active");
+//     player0el.classList.add("player--active");
+//     diceImage.classList.add("hidden");
+    
+//     // set buttons
+//     rollButton.disabled = false;
+//     holdButton.disabled = false;
+// }
+
+// set();
+
+// // switch player function
+// const switchPlayer = function(){
+//     document.getElementById(`current--${activePlayer}`).textContent = 0;
+//     currentScore = 0;
+//     activePlayer=activePlayer === 0 ? 1 : 0;
+//     player0el.classList.toggle("player--active");
+//     player1el.classList.toggle("player--active");
+// }
+
+// // roll dice 
+// rollButton.addEventListener("click",function(){
+//     //  roll
+//     const rolled= Math.trunc(Math.random() * 6) + 1; 
+//     // show dice image
+//      if (diceImage.classList.contains("hidden")) {
+//     diceImage.classList.remove("hidden");
+//     }
+//     // change to obtained image
+//     diceImage.src = `dice-${rolled}.png`;
+
+//     // check for rolled 1
+//     if (rolled !== 1){
+//      currentScore += rolled;
+//      document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+//     }
+//     // switch player
+//     else{
+//      switchPlayer();
+//     }
+//     })
+
+// // hold button
+// holdButton.addEventListener("click",function(){
+
+//     // add current score to active player score
+//     Scores[activePlayer] += currentScore;
+//     document.getElementById(`score--${activePlayer}`).textContent = Scores[activePlayer];
+
+//     // check if player won
+//     if (Scores[activePlayer] >= 100){
+//         document.querySelector(`.player--${activePlayer}`).classList.add("player--winner");
+//         document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
+//         diceImage.classList.add("hidden");
+//         rollButton.disabled = true;
+//         holdButton.disabled = true;
+//     }
+//     else{
+//       switchPlayer();
+//     }
+// })
+
+// // new game button
+// newButton.addEventListener("click",set);
+
 
