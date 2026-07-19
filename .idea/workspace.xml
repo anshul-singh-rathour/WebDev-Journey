@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddb61c00-d00f-4d64-986d-c373bffd0301" name="Changes" comment="" />
+    <list default="true" id="ddb61c00-d00f-4d64-986d-c373bffd0301" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/04_javascript/03_arrays.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_javascript/03_arrays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_javascript/04_objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_javascript/04_objects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_javascript/06_functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_javascript/06_functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_javascript/09_param.js" beforeDir="false" afterPath="$PROJECT_DIR$/04_javascript/09_param.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_javascript/requirements_for_projects/DOM.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_javascript/requirements_for_projects/DOM.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_javascript/requirements_for_projects/firstcode.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,32 +18,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3FopsPlfPNKhIZYQYj846Maotn3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Anshul Singh Rathour/OneDrive/Desktop/WEBDEVLOPMENT"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anshul Singh Rathour/OneDrive/Desktop/WEBDEVLOPMENT&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.26222.65" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.26222.65" />
       </set>
     </attachedChunks>
   </component>

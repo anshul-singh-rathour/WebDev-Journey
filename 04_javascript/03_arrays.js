@@ -37,6 +37,54 @@ if(NaN){
 // except these all other have truthy values 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// and and or operator in javascript
+//   && (and) operator  
+// || (or) operator
+// ?? (nullish coalescing operator)  only check for null and undefined values
+//   use to check multiple conditions in if else statement
+// they can also be used to short circuiting in javascript
+// short-circuiting using || operator
+// if difeerent data types are used in and or operator then they will be 
+// converted to boolean value and then check the condition
+// and first true value will be returned and if all are true then last value will be returned
+// Use ANY data type, return ANY data type,
+console. log(3 || 'Jonas');
+console. log('' || 'Jonas');
+console. log(true || 0);
+console. log(undefined || null);
+console. log (undefined||0||""||'Hello' || 23 || null);
+// short-circuiting using && operator
+// just oposite of || operator, first false value will be returned 
+// and if all are true then last value will be returned
+console.log(3 && 'Jonas');
+console.log('' && 'Jonas');
+console.log(true && 0);
+console.log(undefined && null);
+console.log (undefined && 0 && "" && 'Hello' && 23 && null);
+//  short-circuiting using ?? operator
+// returns the first defined value (not null or undefined) from a list of values.
+//  If all values are null or undefined, it returns the last value.
+// nullish values are only null and undefined, other falsy values like 0, '', false are considered defined.
+console.log(3 ?? 'Jonas');
+console.log('' ?? 'Jonas');
+console.log(true ?? 0);
+console.log(undefined ?? null);
+console.log (undefined ?? 0 ?? "" ?? 'Hello' ?? 23 ?? null);
+
+// we can use these operators as assignments as well
+// or assignment operator (||=) and and assignment operator (&&=) and nullish assignment operator (??=)
+let a = 0;
+a ||= 10;
+console.log(a); // Output: 10 (since 0 is falsy, a is assigned 10)
+
+let b = 5;
+b &&= 20;
+console.log(b); // Output: 20 (since 5 is truthy, b is assigned 20)
+
+let c = null;
+c ??= 15;
+console.log(c); // Output: 15 (since null is nullish, c is assigned 15) 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Arrays
 let color=[];
