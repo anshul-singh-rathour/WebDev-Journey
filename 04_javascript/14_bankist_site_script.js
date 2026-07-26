@@ -218,6 +218,45 @@
 // }))
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// // sticky navigation un prefered method
+// const initialcords = section1.getBoundingClientRect();
+// window.addEventListener('scroll',function(e){
+//   if (window.scrollY > initialcords.top){
+//     nav.classList.add('sticky');
+//   }
+//   else{
+//     nav.classList.remove('sticky');
+//   }
+// });
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//  intersection server Api
+
+// const section_1 = document.querySelector('#section--1');
+
+// const obsFunction = function(enteries,Observer){
+//   enteries.forEach(entry=> {console.log(entry);});
+// }
+
+// // conditions to be fullfill to registered as a observation
+// const obsOptions = {
+//   // according to which the element to be observed if null observation done accoding to viewport
+//   root : null,
+//   // no of percent it should view according to root
+//   threshold:[0,0.2]
+// }
+
+// // define Observer by providing conditions to observe and on conditions fullfill function to be called
+// const Observer = new IntersectionObserver(obsFunction,obsOptions);
+
+// // call observation on  a element
+// Observer.observe(section_1);
+
+
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // actual project
 
 ///////////////////////////////////////
@@ -233,37 +272,47 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 const nav = document.querySelector('.nav');
+const head = document.querySelector('.header');
+const allSlides = document.querySelectorAll('.slide');
+const btnleft = document.querySelector('.slider__btn--left');
+const btnright = document.querySelector('.slider__btn--right');
+let currSlide = 0;
+let maxSlide = allSlides.length;
+const dotContainer = document.querySelector('.dots');
+const navHeight = nav.getBoundingClientRect().height;
+const allSections = document.querySelectorAll('.section');
+const allImages = document.querySelectorAll('img[data-src]');
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// function to open the model 
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
-
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
-
 btnsOpenModal.forEach(btn=> btn.addEventListener('click', openModal));
-
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
-
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
   }
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // button scrolling 
 btnScrollTo.addEventListener('click',function(){
 section1.scrollIntoView({behavior:"smooth"});
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // page navigation
 // select parent to apply bubbling
@@ -272,13 +321,14 @@ document.querySelector('.nav__links').addEventListener('click',function(e){
     // match if click happen at accurate place
     if (e.target.classList.contains('nav__link')){
           const id = e.target.getAttribute('href');
-    document.querySelector(id).scrollIntoView({behavior:'smooth'});
+    id && document.querySelector(id).scrollIntoView({behavior:'smooth'});
     }
   });
 
 
-//   tabbed components
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//   tabbed components
 tabsContainer.addEventListener('click',function(e){
     const clicked = e.target.closest('.operations__tab');
     // guard clause
@@ -292,9 +342,10 @@ tabsContainer.addEventListener('click',function(e){
     document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add('operations__content--active');
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // menu fade animation
-
 const handleHover = function(e){
     if(e.target.classList.contains('nav__link')){
     const link = e.target;
@@ -307,8 +358,132 @@ const handleHover = function(e){
 }
 }
 nav.addEventListener('mouseover',handleHover.bind(0.5));
-
 nav.addEventListener('mouseout',handleHover.bind(1));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// sticky navigation intersection api method
+const stickyhead = function(entries){
+  const [entry]=entries;
+  if(!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+}
+const obsOptions={
+  root: null,
+  threshold: 0,
+  rootMargin:`-${navHeight}px`
+};
+const headerObserver = new IntersectionObserver(stickyhead ,obsOptions);
+headerObserver.observe(head);
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// reveal section
+const revealsec = function(entries,Observer){
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting) return;
+    entry.target.classList.remove('section--hidden');
+    Observer.unobserve(entry.target);
+  })
+}
+const secoptions = {
+  root : null,
+  threshold:0.15,
+}
+const sectionobserver = new IntersectionObserver(revealsec,secoptions);
+allSections.forEach(function(section){
+  section.classList.add('section--hidden');
+  sectionobserver.observe(section);
+});
+
+// // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// reveal image (lazy loading)
+// const allImages = document.getElementById('section--1').querySelectorAll('img');
+const revealImg=function(entries , observer){
+  entries.forEach((entry)=>{
+    if(!entry.isIntersecting) return;
+  entry.target.src = entry.target.dataset.src;
+  entry.target.addEventListener('load',function(){
+    entry.target.classList.remove('lazy-img');
+  })
+  imgObserver.unobserve(entry.target);
+  })
+}
+const imgOptions ={
+  root:null,
+  threshold:0.50,
+  rootMargin:'200px'
+}
+const imgObserver = new IntersectionObserver(revealImg,imgOptions);
+allImages.forEach((image)=>{
+  imgObserver.observe(image);
+})
+
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// slider 
+// dots in the slider 
+const createdots= function(){
+  allSlides.forEach((_,i)=>{
+   dotContainer.insertAdjacentHTML('beforeEnd',`<button class ="dots__dot" data-slide =${i}></button>`);
+  })
+}
+createdots();
 
+// activate dot 
+const activeDot = function(slide){
+  const allDots =document.querySelectorAll('.dots__dot')
+  allDots.forEach((dot)=>dot.classList.remove('dots__dot--active'));
+  document.querySelector(`.dots__dot[data-slide="${slide}"]`).classList.add('dots__dot--active');
+}
+
+const goToSlide = function(slideno){
+  allSlides.forEach((s,i)=> s.style.transform=`translateX(${100*(i-slideno)}%)`);
+  activeDot(slideno);
+}
+goToSlide(0);
+// next slide  function
+const nextSlide = function(direction){
+// currSlide+=(this);
+currSlide+=direction;
+if(currSlide<0) currSlide=maxSlide-1;
+if (currSlide===maxSlide) currSlide=0;
+goToSlide(currSlide);
+}
+
+// btnright.addEventListener('click',nextSlide.bind(1));
+// btnleft.addEventListener('click',nextSlide.bind(-1));
+// slide using button and keyboard
+btnright.addEventListener('click', () => nextSlide(1));
+btnleft.addEventListener('click', () => nextSlide(-1));
+document.addEventListener('keydown',function(e){
+  if ( e.key==='ArrowRight'){
+    nextSlide(1);
+  }
+  e.key==='ArrowLeft' && nextSlide(-1);
+})
+// slide using dots 
+dotContainer.addEventListener('click',function(e){
+  if(e.target.classList.contains('dots__dot')){
+    currSlide=Number(e.target.dataset.slide);
+    goToSlide(currSlide);
+  }
+})
+
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//  default events in browser
+
+// document.addEventListener('DOMContentLoaded',function(e){
+//   console.log("HTML parsed and DOM tree built",e);
+// })
+
+// window.addEventListener('load',function(e){
+//   console.log("Page fully loaded",e);
+// })
+
+// window.addEventListener('beforeunload',function(e){
+//   e.preventDefault();
+//   console.log(e);
+//   e.returnValue='';
+// })
