@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "recipe application (final project fo javascript )",
   "type": "commonjs",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html  --dist-dir ./dist"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",
