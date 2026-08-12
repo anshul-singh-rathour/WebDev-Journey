@@ -58,5 +58,7 @@ This repo reflects ongoing growth — from beginner concepts to advanced impleme
 This is primarily a personal learning repository, but suggestions and feedback are always welcome.
 
  ---
- 
+
+ *** Still learning and progress will be added as learn ***
+ *** Learnt HTML CSS Javascript from Jonas Schmedtmann ***
 ⭐ If you find this inspiring, consider starring the repo.
