@@ -10,8 +10,7 @@ This repo documents my progress as I learn and build with modern web technologie
 This repository is a collection of:
 - Practice projects
 - Concept notes
-- Hands-on experiments
-- Mini and full web development builds
+- Hands-on experimentss
 
 The goal is to track consistent learning, improve coding skills, and build a strong web dev portfolio.
 
@@ -20,13 +19,11 @@ The goal is to track consistent learning, improve coding skills, and build a str
 ## 🧠 Topics Covered
 
 Depending on progress, this repo may include work on:
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript (ES6+)
 - Responsive Web Design
 - Git & GitHub workflow
-- Frontend frameworks/libraries (as I advance)
-- Backend fundamentals (future stage)
 
 ---
 
@@ -35,22 +32,6 @@ Depending on progress, this repo may include work on:
 - VS Code
 - Git & GitHub
 - Browser DevTools
-- Node.js (as required)
-
----
-
-## 📂 Repository Structure
-
-The structure will evolve over time, but generally:
-
-```bash
-WebDev-Journey/
-│
-├── Projects/          # Practice and mini projects
-├── Notes/             # Learning notes and references
-├── Challenges/        # Coding challenges and solutions
-└── README.md          # Repository overview
-```
 
 ---
 
@@ -76,14 +57,6 @@ This repo reflects ongoing growth — from beginner concepts to advanced impleme
 
 This is primarily a personal learning repository, but suggestions and feedback are always welcome.
 
----
-
-## 📬 Connect With Me
-
-- GitHub: [@anshul-singh-rathour](https://github.com/anshul-singh-rathour)
-
-If you're also learning web development, feel free to explore and connect!
-
----
-
+ ---
+ 
 ⭐ If you find this inspiring, consider starring the repo.
