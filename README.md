@@ -59,8 +59,7 @@ This is primarily a personal learning repository, but suggestions and feedback a
 
  ---
 
- *** Still learning and progress will be added as learn ***
+ *** Still learning and progress will be added as i learn ***
  
  *** Learnt HTML CSS Javascript from Jonas Schmedtmann ***
- 
-⭐ If you find this inspiring, consider starring the repo.
+
