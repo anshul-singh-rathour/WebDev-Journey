@@ -9,3 +9,18 @@ html, body{
 height: 100%;
 width: 100%;
 }
+
+.box{
+    height: 200px;
+    width: 200px;
+}
+
+#box1{
+    background-color: crimson;
+}
+#box2{
+    background-color: green;
+}
+#box3{
+    background-color: yellow;
+}

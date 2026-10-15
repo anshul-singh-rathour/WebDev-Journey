@@ -1,18 +1,18 @@
 import { useState } from "react";
 // use of styled components
-import { styled } from "styled-components";
+// import { styled } from "styled-components";
 
 import StyledInput from "./StyledInput.jsx";
 
-import { StyledSimpleButton, StylednewButton } from "./StyledButton.jsx";
+import Button from "./StyledButton.jsx";
 
 // this return a coponent like div with the properties
-const Containerdiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`;
+// const Containerdiv = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 0.5rem;
+//   margin-bottom: 1.5rem;
+// `;
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -35,8 +35,8 @@ export default function AuthInputs() {
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
-    <div id="auth-inputs">
-      <Containerdiv>
+    <div id="auth-inputs" className="mx-auto w-full max-w-sm space-y-4 rounded bg-gradient-to-b from-stone-700 to-stone-800 p-8 shadow-md">
+      <div>
         {/* <p>
          <Labelstyle className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</Labelstyle> 
         $ sign use so that props do not clash with builtin props 
@@ -66,26 +66,12 @@ export default function AuthInputs() {
               }
             />
           </p> */}
-        <StyledInput
-          label={"Email"}
-          $invalid={emailNotValid}
-          type="email"
-          onChange={(event) => handleInputChange("email", event.target.value)}
-        />
-        <StyledInput
-          label={"Password"}
-          $invalid={passwordNotValid}
-          type="password"
-          onChange={(event) => handleInputChange("password", event.target.value) }
-        />
-      </Containerdiv>
-      <div className="actions">
-        <StylednewButton type="button" className="text-button">
-          Create a new account
-        </StylednewButton>
-        <StyledSimpleButton className="button" onClick={handleLogin}>
-          Sign In
-        </StyledSimpleButton>
+        <StyledInput label={"Email"} $invalid={emailNotValid} type="email" onChange={(event) => handleInputChange("email", event.target.value)} />
+        <StyledInput label={"Password"} $invalid={passwordNotValid} type="password" onChange={(event) => handleInputChange("password", event.target.value)} />
+      </div>
+      <div className="actions space-x-2">
+        <Button children={"Create a new account"}></Button>
+        <Button children={"Sign In"} onClick={handleLogin}></Button>
       </div>
     </div>
   );
