@@ -34,10 +34,10 @@
 
 // styling using tailwind css
 
-export default function StyledInput({ label, invalid, ...props }) {
+export default function StyledInput({ label, $invalid, ...props }) {
   let labelclasses = " mt-2 mb-2 block text-xs font-bold tracking-wide uppercase";
   let inputclasses = "w-full rounded border px-3 py-2 leading-tight shadow";
-  if (invalid) {
+  if ($invalid) {
     labelclasses += " text-red-400";
     inputclasses += " text-red-500 bg-red-100 border-red-300";
   } else {

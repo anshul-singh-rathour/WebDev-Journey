@@ -35,8 +35,8 @@ export default function AuthInputs() {
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
-    <div id="auth-inputs" className="mx-auto w-full max-w-sm space-y-4 rounded bg-gradient-to-b from-stone-700 to-stone-800 p-8 shadow-md">
-      <div>
+    <div id="auth-inputs" className="mx-auto w-full max-w-sm rounded bg-linear-to-b from-stone-700 to-stone-800 p-8 shadow-md">
+      <div className="mb-6 flex flex-col gap-2">
         {/* <p>
          <Labelstyle className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</Labelstyle> 
         $ sign use so that props do not clash with builtin props 
@@ -69,7 +69,7 @@ export default function AuthInputs() {
         <StyledInput label={"Email"} $invalid={emailNotValid} type="email" onChange={(event) => handleInputChange("email", event.target.value)} />
         <StyledInput label={"Password"} $invalid={passwordNotValid} type="password" onChange={(event) => handleInputChange("password", event.target.value)} />
       </div>
-      <div className="actions space-x-2">
+      <div className="flex justify-end gap-4">
         <Button children={"Create a new account"}></Button>
         <Button children={"Sign In"} onClick={handleLogin}></Button>
       </div>
